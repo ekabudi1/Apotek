@@ -82,7 +82,7 @@
                                 $data = mysqli_query($koneksi, $query);
                                 while($baris = mysqli_fetch_assoc($data)){
                                 ?>
-                                <option value="<?= $baris['id_supplier']; ?>"><?= $baris['perusahaan']; ?></option>
+                                <option value="<?= $baris['idsupplier']; ?>"><?= $baris['perusahaan']; ?></option>
                                 <?php
                                 
                                 };
@@ -128,7 +128,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Simpan Data Obat">
+                        <input type="submit" value="Simpan Data Obat" href="index.php">
                     </td>
                 </tr>
             </table>
