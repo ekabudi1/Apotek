@@ -10,7 +10,7 @@
     if(!$koneksi){
         die ("Koneksi ke Database Gagal ".mysqli_connect_error());
     }
-    else{
-        echo "Koneksi Berhasil";
-    }
+    // else{
+    //     echo "Koneksi Berhasil";
+    // }
 ?>

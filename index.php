@@ -75,26 +75,43 @@
                 <tr>
                     <td>Id Supplier</td>
                     <td>
-                        <select name="id_supplier" id="">
-                             <?php
+                        <!-- <select name="id_supplier" id="">
+                            <?php
                                 include "koneksi.php";
                                 $query = "SELECT * FROM tb_supplier";
                                 $data = mysqli_query($koneksi, $query);
                                 while($baris = mysqli_fetch_assoc($data)){
                                 ?>
-                                <option value="<?= $baris['id_supplier']; ?>"><?= $baris['perusahaan']; ?></option>
-                                <?php
+                            <option value="<?php echo $baris['idsupplier']; ?>"><?php echo $baris['perusahaan']; ?>
+                            </option>
+
+                            <?php
                                 
                                 };
                                 var_dump($data);
                             ?>
+                        </select> -->
+                        <select name="id_supplier" id="">
+                            <?php
+                                include "koneksi.php";
+                                $query = "SELECT * FROM tb_supplier";
+                                $data = mysqli_query($koneksi, $query);
+                                while($baris = mysqli_fetch_assoc($data)){
+                                ?>
+                            <option value="<?= $baris['id_supplier']; ?>"><?= $baris['perusahaan']; ?></option>
+                            <?php
+                                
+                                };
+                                var_dump($data);
+                            ?>
+                                   
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>Nama Obat</td>
                     <td>
-                         <input type="text" name="nama_obat" id="">
+                        <input type="text" name="nama_obat" id="">
                     </td>
                 </tr>
                 <tr>
@@ -128,7 +145,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Simpan Data Obat">
+                        <input type="submit" value="Simpan Data Obat" href="index.php">
                     </td>
                 </tr>
             </table>
