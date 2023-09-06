@@ -40,7 +40,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_obat ORDER BY id_obat DESC");
                 <td><?= $baris['hargabeli']; ?></td>
                 <td><?= $baris['stok_obat']; ?></td>
                 <td><?= $baris['keterangan']; ?></td>
-                <td>Edit</td>
+                <td><a href="edit_obat.php?idobat=<?= $baris['id_obat']; ?>">Edit</a></td>
                 <td><a href="delete_obat.php?idobat=<?= $baris['id_obat'];?>">Delete</a></td>
             </tr>
             <?php

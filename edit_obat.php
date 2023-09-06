@@ -1,19 +1,26 @@
+<!-- untuk editing data obat -->
+<?php
+//tambahin koneksi.php biar mysqli_querry bekerja
+include "koneksi.php";
+
+//buat varaible getnya dulu{
+    $id_obat = $_GET['idobat'];
+// }
+// dan kemudian masukan kedalan setelah =
+   $query_obat= mysqli_query($koneksi, "SELECT* FROM tb_obat WHERE  id_obat=$id_obat");
+   //tampilkan data dengan syntac fetch assocs
+  $row =  mysqli_fetch_assoc($query_obat);
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Formulir Obat</title>
-    <style>
-    body {
-        background-color: black;
-        color: white;
-    }
-    </style>
+    <title>EDIT Obat</title>
 </head>
 
 <body>
     <center>
-        <h1>TAMBAH OBAT</h1>
+        <h1>EDIT OBAT</h1>
         <form action="proses_add_obat.php" method="post">
             <table>
                 <tr>
@@ -55,35 +62,35 @@
                 <tr>
                     <td>Nama Obat</td>
                     <td>
-                        <input type="text" name="nama_obat" id="">
+                        <input type="text" name="nama_obat" value="<?= $row['namaobat'] ?>">
                     </td>
                 </tr>
                 <tr>
                     <td>Kategori Obat</td>
                     <td>
-                        <input type="text" name="kategori" id="">
+                        <input type="text" name="kategori" value="<?= $row['kategoriobat'] ?>">
                     </td>
                 </tr>
                 <tr>
                     <td>Harga Jual</td>
                     <td>
-                        <input type="text" name="harga_jual" id="">
+                        <input type="text" name="harga_jual" value="<?= $row['hargajual'] ?>">
                     </td>
                 </tr>
                 <tr>
                     <td>Harga Beli</td>
-                    <td><input type="text" name="harga_beli" id=""></td>
+                    <td><input type="text" name="harga_beli" value="<?= $row['hargabeli'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Stok Obat</td>
                     <td>
-                        <input type="text" name="stok_obat" id="">
+                        <input type="text" name="stok_obat" value="<?= $row['stok_obat'] ?>">
                     </td>
                 </tr>
                 <tr>
                     <td>Keterangan</td>
                     <td>
-                        <input type="text" name="keterangan" id="">
+                        <input type="text" name="keterangan" value="<?= $row['keterangan'] ?>">
                     </td>
                 </tr>
                 <tr>
