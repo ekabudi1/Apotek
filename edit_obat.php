@@ -16,46 +16,46 @@ include "koneksi.php";
 
 <head>
     <title>EDIT Obat</title>
+    <style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    </style>
 </head>
 
 <body>
     <center>
         <h1>EDIT OBAT</h1>
-        <form action="proses_add_obat.php" method="post">
+        <form action="proses_edit_obat.php" method="post">
+            <input type="text" hidden name="idobat" value="<?= $id_obat?>">
+            <!-- valuenya akan dipakek buat ngirim id_obat atau mendapat, dan dimana id_obat g bole diedit, maka id_obat dihide, dan input harus ada didalah scop form -->
             <table>
                 <tr>
                     <td>Id Supplier</td>
                     <td>
-                        <!-- <select name="id_supplier" id="">
-                            <?php
-                                include "koneksi.php";
-                                $query = "SELECT * FROM tb_supplier";
-                                $data = mysqli_query($koneksi, $query);
-                                while($baris = mysqli_fetch_assoc($data)){
-                                ?>
-                            <option value="<?php echo $baris['id_supplier']; ?>"><?php echo $baris['perusahaan']; ?>
-                            </option>
-
-                            <?php
-                                
-                                };
-                                var_dump($data);
-                            ?>
-                        </select> -->
                         <select name="id_supplier" id="">
                             <?php
-                                include "koneksi.php";
+                                $id_supplier = $row['id_supplier'];//mengambil id_supplier dari variabel $row di line ke12
+                                // include "koneksi.php";
+                                $query_supplier = mysqli_query($koneksi,"SELECT id_supplier, perusahaan FROM tb_supplier WHERE id_supplier=$id_supplier");
+                                $baris_supplier = mysqli_fetch_assoc($query_supplier);
+
                                 $query = "SELECT * FROM tb_supplier";
                                 $data = mysqli_query($koneksi, $query);
                                 while($baris = mysqli_fetch_assoc($data)){
                                 ?>
-                            <option value="<?= $baris['id_supplier']; ?>"><?= $baris['perusahaan']; ?></option>
+                            <option <?php 
+                                    if ($baris_supplier['id_supplier']==$baris['id_supplier']) {
+                                        # dimana id_supplier ini datangnya dari database
+                                        # $baris['id_supplier] datang dari dari fetch_assosc di line ke 38
+                                        echo "selected";
+                                    }
+                                ?> value="<?= $baris['id_supplier']; ?>"><?= $baris['perusahaan']; ?>
+                            </option>
                             <?php
-                                
                                 };
-                                var_dump($data);
                             ?>
-                                   
                         </select>
                     </td>
                 </tr>
@@ -96,7 +96,7 @@ include "koneksi.php";
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Simpan Data Obat" href="index.php">
+                        <input type="submit" value="Edit Data Obat" href="index.php">
                     </td>
                 </tr>
             </table>

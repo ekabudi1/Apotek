@@ -11,11 +11,31 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_obat ORDER BY id_obat DESC");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Obat</title>
+    <style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    body tr td a {
+        color: white;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        background-color: green;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    </style>
 </head>
 
 <body>
     <center>
+        <h1>
+            <b>
+                TAMPILAN DATA OBAT
+            </b>
+        </h1>
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>Id Obat</th>
