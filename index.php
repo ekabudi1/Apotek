@@ -8,6 +8,35 @@
         background-color: black;
         color: white;
     }
+
+    body h1 {
+        font-size: 90px;
+        font-weight: 900;
+        margin-top: 10%;
+
+        /* background-color: blue; */
+    }
+
+    body form table {
+        width: 100%;
+        /* height: 50rem; */
+    }
+
+    /* body form table tr {
+        width: 100px;
+    } */
+
+    body form table tr td {
+        font-size: 30px;
+        /* width: 50%;
+        height: 150px; */
+    }
+
+    body form table input {
+        width: 231%;
+        height: 100px;
+        background-color: blue;
+    }
     </style>
 </head>
 
