@@ -76,7 +76,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Simpan Data Pelanggan" href="index.php">
+                        <input type="submit" value="Simpan Data Pelanggan" >
                     </td>
                 </tr>
             </table>
