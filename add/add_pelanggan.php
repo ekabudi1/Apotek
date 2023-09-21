@@ -42,9 +42,9 @@
 <body>
     <center>
         <h1>TAMBAH PELANGGAN</h1>
-        <form action="proses_add_pelanggan.php" method="POST" enctype="multipart/from-data">
+        <form action="proses_add_pelanggan.php" method="POST" enctype="multipart/form-data">
             <table>
-            
+
                 <tr>
                     <td>Nama Lengkap</td>
                     <td>
@@ -76,7 +76,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Simpan Data Pelanggan" >
+                        <input type="submit" value="Simpan Data Pelanggan">
                     </td>
                 </tr>
             </table>
