@@ -11,7 +11,10 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_pelanggan ORDER BY idpelanggan
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obat</title>
+    <title>Pelanggan</title>
+    <!-- <link rel="stylesheet" href="../css/uikit.min.css"> -->
+    <!-- <script src="../js/uikit.min.js"></script>
+    <script src="../js/uikit-icons.min.js"></script> -->
     <style>
     html::-webkit-scrollbar {
         display: none;
@@ -83,7 +86,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_pelanggan ORDER BY idpelanggan
                    if ($cek['0']==0) {
                        # code...
                        ?>
-                <td><a href="../delete/delete_obat.php?idpelanggan=<?= $baris['idpelanggan'];?>">Delete</a></td>
+                <td><a href="../delete/delete_pelanggan.php?idpelanggan=<?= $baris['idpelanggan'];?>">Delete</a></td>
                 <?php
                     // }else{
                     //     echo"<td></td>";
