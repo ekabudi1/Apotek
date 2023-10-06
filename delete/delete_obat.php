@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "../koneksi.php";
 // ini kita ambil methode delet dari view obat line ke 64 dengan nama idobat
 //di line syntax ini : 
 // <td><a href="delete_obat.php?idobat=<?= $baris['id_obat'];

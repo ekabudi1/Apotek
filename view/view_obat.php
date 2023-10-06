@@ -1,9 +1,20 @@
 <?php
 include "../koneksi.php";
+session_start();
 $query = mysqli_query($koneksi, "SELECT * FROM tb_obat ORDER BY id_obat DESC");
  //ASCENDING mengurutkan dari kecil ke besar
  //DESCENDING mengurutkan dari besar ke kecil
     # code...
+
+
+    // memberika batasan bagi yang dapat mengedit dan menghapus data obat
+    if (!@$_SESSION['Username']) {
+        echo"";
+        # code...
+    } else {
+        # code...
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +57,9 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_obat ORDER BY id_obat DESC");
 </head>
 
 <body>
+    <?php
+        echo $_SESSION['username'];
+    ?>
     <center>
         <h1>
             <b>

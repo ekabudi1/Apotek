@@ -4,6 +4,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_pelanggan ORDER BY idpelanggan
  //ASCENDING mengurutkan dari kecil ke besar
  //DESCENDING mengurutkan dari besar ke kecil
     # code...
+
+    if (!@$_COOKIE['username']) {
+        echo"<script>alert('SIlahkan login terlebih dahulu');window.location.href='../login.php'</>";
+        # code...
+    }elseif(@$_COOKIE['level'] == 'pegawai'){
+        echo"<script>alert('anda seorang pegawai');window.location.href='../login.php';</script>";
+    };
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +63,9 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_pelanggan ORDER BY idpelanggan
                 TAMPILAN DATA PELANGGAN
             </b>
         </h1>
+        <?php 
+        echo $_COOKIE['username'];
+        ?>
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <th>Id Pelanggan</th>
@@ -97,6 +108,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_pelanggan ORDER BY idpelanggan
                 }
             ?>
         </table>
+        <button type="button"><a href="../logout_cookies.php">Logout</a></button>
     </center>
 
 </body>
