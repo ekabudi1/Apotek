@@ -3,13 +3,16 @@ include "koneksi.php";
 session_start();
 $user = $_POST['username'];
 $pass = $_POST['password'];
-$query = mysqli_query($koneksi, "SELECT * FROM tb_login WHERE username='$user' AND password='$pass'");
+$login = mysqli_query($koneksi, "SELECT * FROM tb_login WHERE username='$user' AND password='$pass'");
+$query_leveluser = mysqli_fetch_assoc($login);
+$cek = mysqli_num_rows($login);
 
-$cek = mysqli_num_rows($query);
 
 if ($cek > 0){
     $_SESSION['username'] = $user;
-    echo"<script>alert ('Berhasil Login');window.location.href='view/view_obat.php'</script>";
+    $_SESSION['level_user'] = $query_lvluser['leveluser'];
+    // echo"<script>alert ('Berhasil Login');window.location.href='view/view_obat.php'</script>";
+    header('Location:view/view_obat.php');
 
 } else {
     echo"<script>alert('Gagal Login');window.location.href='login.php'</script>";

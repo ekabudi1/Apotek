@@ -20,23 +20,13 @@
         font-size: 90px;
         font-weight: 900;
         margin-top: 10%;
-
-        /* background-color: blue; */
     }
 
     body form table {
         width: 38%;
-        /* height: 50rem; */
     }
-
-    /* body form table tr {
-        width: 100px;
-    } */
-
     body form table tr td {
         font-size: 30px;
-        /* width: 50%;
-        height: 150px; */
     }
 
     body form table input {
@@ -78,12 +68,10 @@
                 <tr>
                     <td>Bukti Foto Resep</td>
                     <td>
-                        <!-- <input type="file" name="buktifoto" id="" value="<?= $row['buktifotoresep']?>"> -->
                         <img src="../gambar/<?= $row['buktifotoresep']?>" width="200px" height="200px" alt="">
                     </td>
                 </tr>
                 <tr>
-                    <!-- <td>Bukti Foto Resep</td> -->
                     <td></td>
                     <td>
                         <input type="file" name="buktifoto" id="" value="<?= $row['buktifotoresep']?>">

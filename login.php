@@ -11,11 +11,6 @@
         background-color: black;
         color: white;
     }
-
-    form tr td input {
-        /* height: 100px;
-        width: 300px; */
-    }
     </style>
 </head>
 

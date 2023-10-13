@@ -8,12 +8,14 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_obat ORDER BY id_obat DESC");
 
 
     // memberika batasan bagi yang dapat mengedit dan menghapus data obat
-    if (!@$_SESSION['Username']) {
-        echo"";
+    if (!@$_SESSION['username']) {
         # code...
-    } else {
+        echo"<script>alert('Login Dulu');window.location.href='../login.php'</script>";
+    } elseif(@$_SESSION['level_user']=='pegawai'){
+        echo"<script>alert('Anda Karyawan');window.location.href='../login.php'</script>";
         # code...
-    }
+    }else{
+    
     
 ?>
 <!DOCTYPE html>
@@ -117,3 +119,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM tb_obat ORDER BY id_obat DESC");
 </body>
 
 </html>
+
+<?php
+    } 
+?>
